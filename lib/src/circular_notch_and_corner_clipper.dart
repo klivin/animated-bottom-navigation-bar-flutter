@@ -17,8 +17,10 @@ class CircularNotchedAndCorneredRectangleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     if (geometry.value.floatingActionButtonArea != null &&
-        geometry.value.floatingActionButtonArea!.width !=
-            geometry.value.floatingActionButtonArea!.height)
+        (geometry.value.floatingActionButtonArea!.width -
+                    geometry.value.floatingActionButtonArea!.height)
+                .abs() >
+            .01)
       throw IllegalFloatingActionButtonSizeException(
           'Floating action button must be a circle');
 
