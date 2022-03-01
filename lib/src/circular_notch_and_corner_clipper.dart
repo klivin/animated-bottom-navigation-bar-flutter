@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'exceptions.dart';
+// import 'exceptions.dart';
 
 class CircularNotchedAndCorneredRectangleClipper extends CustomClipper<Path> {
   final ValueListenable<ScaffoldGeometry> geometry;
@@ -16,13 +16,13 @@ class CircularNotchedAndCorneredRectangleClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    if (geometry.value.floatingActionButtonArea != null &&
-        (geometry.value.floatingActionButtonArea!.width -
-                    geometry.value.floatingActionButtonArea!.height)
-                .abs() >
-            .01)
-      throw IllegalFloatingActionButtonSizeException(
-          'Floating action button must be a circle');
+    // if (geometry.value.floatingActionButtonArea != null &&
+    //     (geometry.value.floatingActionButtonArea!.width -
+    //                 geometry.value.floatingActionButtonArea!.height)
+    //             .abs() >
+    //         .01)
+    //   throw IllegalFloatingActionButtonSizeException(
+    //       'Floating action button must be a circle');
 
     final Rect? button = geometry.value.floatingActionButtonArea?.translate(
       0.0,
